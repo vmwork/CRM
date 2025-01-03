@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main mt-4">
     <Aside />
     <slot />
   </div>

@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   // typescript: {
   //   typeCheck: true,
   // },
-  css: ['~/assets/main.scss'],
+  css: ['~/assets/main.scss', '~/assets/css/main.css'],
   alias: {
     '@': '/<srcDir>',
   },
@@ -15,6 +15,12 @@ export default defineNuxtConfig({
           additionalData: '@use "~/assets/colors.scss" as *;',
         },
       },
+    },
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
     },
   },
   modules: ['@nuxt/image'],

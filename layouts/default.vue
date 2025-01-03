@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <Aside />
     <slot />
   </div>
 </template>

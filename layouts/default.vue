@@ -1,6 +1,10 @@
 <template>
-  <main class="flex">
-    <Aside />
+  <div class="main">
     <slot />
-  </main>
+  </div>
 </template>
+<style lang="scss">
+.main {
+  display: flex;
+}
+</style>

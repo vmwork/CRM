@@ -1,36 +1,26 @@
-// https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@vueuse/nuxt',
-    '@pinia/nuxt',
-    '@nuxtjs/color-mode',
-    'nuxt-icon',
-    'nuxt-headlessui',
-    'nuxt-vitest',
-    '@nuxt/devtools'
-  ],
-
-  experimental: {
-    reactivityTransform: true
+  devtools: { enabled: true },
+  // typescript: {
+  //   typeCheck: true,
+  // },
+  css: ['~/assets/main.scss'],
+  alias: {
+    '@': '/<srcDir>',
   },
-
-  css: ['~/assets/css/tailwind.css'],
-
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
-    }
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "~/assets/colors.scss" as *;',
+        },
+      },
+    },
   },
-
-  colorMode: {
-    classSuffix: ''
+  modules: ['@nuxt/image'],
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.BASE_URL,
+    },
   },
-
-  headlessui: {
-    prefix: ''
-  },
-
-  devtools: true,
-  compatibilityDate: '2025-01-03'
-})
+});

@@ -1,8 +1,20 @@
 {
-    "extends": [
-        "@nuxtjs/eslint-config-typescript"
+  "extends": [
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "off"
     ],
-    "rules": {
-        "vue/multi-word-component-names": 0
-    }
+    "vue/multi-word-component-names": "off",
+    "semi": [
+      2,
+      "always"
+    ]
+  }
 }

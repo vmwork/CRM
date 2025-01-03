@@ -1,7 +1,7 @@
 <template>
-  <div class="aside-menu rounded-r pl-4">
-    <button @click="$emit('closeMenu')">X</button>
-    <ul>
+  <div class="aside-menu rounded-r pt-4">
+    <button class="flex justify-center w-full" @click="$emit('closeMenu')">X</button>
+    <ul class="pl-4">
       <li><button>page -1</button></li>
       <li><button>page -2</button></li>
       <li><button>page -3</button></li>
@@ -17,7 +17,6 @@
   left: 0px;
   width: 100px;
   height: 100vh;
-  // border: 1px solid red;
   background-color: #0284c7;
   z-index: 1;
 }
